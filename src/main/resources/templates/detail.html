@@ -1,0 +1,61 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Person</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<style type="text/css">
+			table {
+				 margin: 0px auto;         
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+		<div th:include="header :: header"></div>
+		
+		<form th:object="${person}">
+			<table>
+				<tr>
+					<td>Id:</td>
+					<td><input th:field="*{id}" size="50" readonly="readonly"/></td>
+				</tr>
+				<tr>
+					<td>First Name:</td>
+					<td><input th:field="*{firstName}" size="50" readonly="readonly"/></td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><input th:field="*{lastName}" size="50" readonly="readonly"/></td>
+				</tr>
+			</table>				
+		</form>
+		
+		<table>
+			<tr>
+				<td>
+					<form th:action="@{/person/edit}" method="get" >
+						<table>
+							<tr>
+								<td><input type="hidden" name="id" th:value="${person.id}" /></td>
+								<td><input type="submit" value="Edit" /></td>
+							</tr>
+	    				</table>
+					</form>
+				</td>
+				<td>
+					<form th:action="@{/person/delete}" method="post" >
+						<table>
+							<tr>
+								<td><input type="hidden" name="id" th:value="${person.id}" /></td>
+								<td><input type="submit" value="Delete" /></td>
+							</tr>
+	    				</table>
+					</form>
+				</td>
+			</tr>
+		</table>
+			
+		<div th:include="footer :: footer"></div>
+	
+	</body>
+</html>

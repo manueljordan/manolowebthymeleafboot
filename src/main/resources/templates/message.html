@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Message Page</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	</head>
+	
+	<body>
+	
+		<div th:include="header :: header"></div>
+	
+		<p align="center" th:text="${message}">message</p>
+	
+		<div th:include="footer :: footer"></div>
+	
+	</body>
+</html>

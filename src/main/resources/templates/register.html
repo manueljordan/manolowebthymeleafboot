@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Register Person</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<style type="text/css">
+			table {
+				 margin: 0px auto;         
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+		<div th:include="header :: header"></div>
+		
+		<form th:object="${person}" th:action="@{/person/register}" method="post">
+			<table>
+				<tr>
+					<td>Id:</td>
+					<td><input th:field="*{id}" size="50" /></td>
+				</tr>
+				<tr>
+					<td>First Name:</td>
+					<td><input th:field="*{firstName}" size="50" /></td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><input th:field="*{lastName}" size="50" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Save"/></td>
+				</tr>
+			</table>				
+		</form>
+		
+		<div th:include="footer :: footer"></div>
+	
+	</body>
+</html>

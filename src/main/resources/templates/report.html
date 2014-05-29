@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Report</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<style type="text/css">
+			table {
+				 margin: 0px auto;         
+			}
+		</style>
+	</head>
+	
+	<body>
+
+		<div th:include="header :: header"></div>
+		
+		<table>
+			<tr>
+				<th>N</th>
+				<th>Id</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Details</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>	
+			<tr th:each="person : ${persons}">
+				<td th:text="${personStat.count}" ></td>
+				<td th:text="${person.id}"></td>
+				<td th:text="${person.firstName}"></td>
+				<td th:text="${person.lastName}"></td>
+				<td>
+					<a th:href="@{/person/detail(id=${person.id})}">Click</a>
+				</td>
+				<td>
+					<a th:href="@{/person/edit(id=${person.id})}">Click</a>
+				</td>
+				<td>
+					<a th:href="@{/person/delete(id=${person.id})}">Click</a>
+				</td>
+			</tr>
+		</table>
+		
+		<div th:include="footer :: footer"></div>
+		
+	</body>	
+</html>
