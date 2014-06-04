@@ -10,6 +10,8 @@
 	<name>ManoloWebThymeleafBoot</name>
 	<description>Spring Framework through Spring MVC (Thymeleaf) with Spring Boot</description>
 
+	<url>http://manueljordanelera.blogspot.com/</url>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
